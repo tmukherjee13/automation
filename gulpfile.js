@@ -109,7 +109,7 @@ gulp.task('js:clean',['clean'], function() {
     	.pipe(size())
         .pipe(uglify())
         .on('error', gutil.log)
-        .pipe(concat(settings.production_js_file))
+        .pipe(concat(settings.production_js_file+settings.production_suffix+'.js'))
         .pipe(gulp.dest(settings.build_dir))
         .pipe(size());
 });
